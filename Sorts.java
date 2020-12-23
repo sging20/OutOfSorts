@@ -18,18 +18,18 @@ public class Sorts{
 }
 
 public static void selectionSort(int[] data){
-  int temp;
   for(int i=0; i< data.length-1; i++){
-      for(int j=0; j< data.length-1; j++){
-          int smallest= data[i];
-              if(smallest > data[j]){
-                smallest= data[j];
-                data[j]= data[i];
+    int ind=i;
+      for(int j=i+1; j< data.length; j++){
+              if(data[ind] > data[j]){
+                ind=j;
+              }
+            }
+                int smallest= data[ind];
+                data[ind]= data[i];
                 data[i] = smallest;
               }
             }
-    }
-}
 public static void insertionSort(int[] data){
   int temp;
   for(int i=1; i< data.length; i++){ //go through each part of the list
